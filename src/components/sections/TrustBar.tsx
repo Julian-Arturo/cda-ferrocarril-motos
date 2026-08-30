@@ -1,25 +1,29 @@
-import { Shield, Award, MapPin, Wrench } from "lucide-react";
 import { CERTIFICATIONS } from "@/lib/constants";
-
-const icons = [Shield, Award, Wrench, MapPin];
 
 export function TrustBar() {
   return (
-    <section className="border-b border-zinc-100 bg-white py-8">
+    <section className="border-b border-zinc-100/50 bg-white py-6 lg:py-8">
       <div className="section-container">
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-          {CERTIFICATIONS.map((cert, index) => {
-            const Icon = icons[index % icons.length];
-            return (
-              <div
-                key={cert}
-                className="flex items-center gap-2 text-sm font-medium text-zinc-600"
-              >
-                <Icon className="h-5 w-5 text-brand-600" />
-                <span>{cert}</span>
-              </div>
-            );
-          })}
+        <div className="grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-6 md:grid-cols-4 md:gap-x-10 lg:gap-x-16">
+          {CERTIFICATIONS.map((cert) => (
+            <div
+              key={cert.name}
+              className="flex h-20 w-full max-w-[280px] items-center justify-center px-2 sm:h-24 lg:h-28"
+              title={cert.name}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={cert.src}
+                alt={cert.alt}
+                className="h-full w-full object-contain"
+                style={{
+                  maxHeight: cert.height,
+                  maxWidth: cert.maxWidth,
+                  transform: "scale" in cert && cert.scale ? `scale(${cert.scale})` : undefined,
+                }}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

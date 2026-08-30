@@ -10,7 +10,7 @@ import {
   Shield,
   Zap,
 } from "lucide-react";
-import { CONTACT } from "@/lib/constants";
+import { CONTACT, IMAGES } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -99,8 +99,8 @@ ${formData.message ? `*Mensaje:* ${formData.message}` : ""}`;
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-5">
           <div className="relative min-h-[340px] overflow-hidden rounded-2xl sm:min-h-[420px] lg:col-span-2 lg:min-h-[520px]">
             <Image
-              src="/images/booking.jpg"
-              alt="Técnico realizando revisión técnico-mecánica a motocicleta"
+              src={IMAGES.booking}
+              alt="Técnico realizando inspección de luces en motocicleta en CDA Av. Ferrocarril"
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 40vw"

@@ -8,13 +8,13 @@ export function SocialProof() {
       <div className="section-container">
         <SectionHeading
           eyebrow="Lo que dicen nuestros clientes"
-          title={`Más de ${STATS.revisions} revisiones realizadas`}
+          title={`Más de ${STATS.revisionsLabel} revisiones realizadas`}
           description="La confianza de nuestros clientes es nuestro mejor respaldo."
         />
 
         <div className="mb-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
           {[
-            { value: `${STATS.revisions}+`, label: "Revisiones realizadas" },
+            { value: STATS.revisionsLabel, label: "Revisiones realizadas" },
             { value: "100%", label: "CDA autorizado" },
             { value: "2T y 4T", label: "Tipos de motos" },
             { value: "Rápido", label: "Proceso ágil" },

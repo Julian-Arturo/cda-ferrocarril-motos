@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MapPin, Phone, Clock, Facebook, Instagram } from "lucide-react";
 import { CONTACT, SITE, CERTIFICATIONS } from "@/lib/constants";
 import { formatPhoneLink } from "@/lib/utils";
+import { Logo } from "@/components/ui/Logo";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,9 +12,7 @@ export function Footer() {
       <div className="section-container py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-600">
-              <span className="text-sm font-bold text-white">CDA</span>
-            </div>
+            <Logo className="mb-4 h-14 brightness-110" />
             <h3 className="mb-2 text-lg font-bold text-white">{SITE.name}</h3>
             <p className="text-sm leading-relaxed">
               Centro de Diagnóstico Automotor autorizado. Especialistas en revisión
@@ -109,10 +108,10 @@ export function Footer() {
               <div className="flex flex-wrap gap-2">
                 {CERTIFICATIONS.map((cert) => (
                   <span
-                    key={cert}
+                    key={cert.name}
                     className="rounded-full bg-surface-800 px-2.5 py-1 text-xs"
                   >
-                    {cert}
+                    {cert.name}
                   </span>
                 ))}
               </div>

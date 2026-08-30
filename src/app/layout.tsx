@@ -32,6 +32,17 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     title: `${SITE.name} | Revisión Técnico-Mecánica para Motos`,
     description: SITE.description,
+    images: [
+      {
+        url: "/images/logo.png",
+        alt: SITE.name,
+      },
+    ],
+  },
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
   },
   twitter: {
     card: "summary_large_image",

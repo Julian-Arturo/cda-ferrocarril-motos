@@ -1,3 +1,27 @@
+export const IMAGES = {
+  hero: "/images/hero-fachada.jpg",
+  logo: "/images/logo.png",
+  booking: "/images/booking.png",
+} as const;
+
+export const R5 = {
+  bookingUrl: "https://www.grupor5.com/tecnomecanica",
+  label: "Agendar en R5",
+  tooltip: "Agenda tu tecno en R5",
+  logo: "/images/r5-logo.png",
+} as const;
+
+export const WHATSAPP_CHAT = {
+  storageKey: "cda-wa-chat-dismissed",
+  showDelayMs: 3500,
+  typingDurationMs: 2600,
+  agentName: "CDA Av. Ferrocarril",
+  status: "En línea · responde en minutos",
+  greeting:
+    "¡Hola! 👋 Somos el equipo del CDA. ¿Te ayudamos a agendar tu revisión técnico-mecánica?",
+  cta: "Responder ahora",
+} as const;
+
 export const SITE = {
   name: "CDA Av. Ferrocarril Motos",
   shortName: "CDA Ferrocarril Motos",
@@ -7,6 +31,9 @@ export const SITE = {
   url: "https://cdaferrocarrilmotos.com",
   locale: "es_CO",
 } as const;
+
+export const PAGE_TITLE =
+  `${SITE.name} | Revisión Técnico-Mecánica Motos en Barrancabermeja`;
 
 export const CONTACT = {
   address: "Cra. 33 #55A-96",
@@ -28,14 +55,23 @@ export const CONTACT = {
   mapDirectionsUrl:
     "https://www.google.com/maps/search/?api=1&query=Cra.+33+%2355A-96+Barrancabermeja+Santander",
   social: {
-    facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
+    facebook:
+      "https://www.facebook.com/p/CDA-MOTOS-AV-Ferrocarril-61553245675521/",
+    instagram: "https://www.instagram.com/cdaavferrocarril/",
   },
 } as const;
 
 export const STATS = {
-  revisions: 449,
+  revisions: 30000,
+  revisionsLabel: "30.000+",
   yearsExperience: 5,
+} as const;
+
+export const FINANCING = {
+  partnersImage: "/images/financing/sistecredito-fipro.jpg",
+  partnersAlt: "Sistecrédito y Fipro Crédito",
+  whatsappMessage:
+    "Hola, me gustaría consultar la financiación del 100% de mi revisión técnico-mecánica con Sistecrédito o Fipro.",
 } as const;
 
 export const NAV_LINKS = [
@@ -61,18 +97,18 @@ export const SERVICES = [
     features: ["Inspección completa", "Registro RUNT", "Resultado el mismo día"],
     cta: "Agendar revisión",
     icon: "bike" as const,
-    image: "/images/services/motos.jpg",
+    image: "/images/services/motos.png",
     highlighted: true,
   },
   {
     id: "financiacion",
     title: "Financiación 100%",
     description:
-      "¿Sin dinero para pagar la revisión? Financia el 100% de tu revisión técnico-mecánica con Sistecrédito o Fipro.",
+      "¿Sin dinero para pagar la revisión? Financia el 100% con nuestros aliados Sistecrédito y Fipro Crédito. Sin cuota inicial y aprobación rápida.",
     features: ["Sin cuota inicial", "Aprobación rápida", "Pagos flexibles"],
     cta: "Consultar financiación",
     icon: "credit" as const,
-    image: "/images/services/financiacion.jpg",
+    image: "/images/services/financiacion.png",
     highlighted: false,
   },
   {
@@ -83,7 +119,7 @@ export const SERVICES = [
     features: ["Atención personalizada", "Proceso transparente", "Soporte por WhatsApp"],
     cta: "Hablar con un asesor",
     icon: "support" as const,
-    image: "/images/services/asesoria.jpg",
+    image: "/images/services/asesoria.png",
     highlighted: false,
   },
 ] as const;
@@ -149,16 +185,22 @@ export const VEHICLE_TYPES = [
     type: "Motos 2T",
     description: "Motocicletas de dos tiempos. Revisión completa de motor, frenos, luces y emisiones.",
     examples: "Ciclomotores, motos de trabajo, scooters 2T",
+    image: "/images/vehicles/motos-2t.png",
+    alt: "Revisión técnico-mecánica de moto 2T en CDA Av. Ferrocarril",
   },
   {
     type: "Motos 4T",
     description: "Motocicletas de cuatro tiempos. Inspección integral de sistemas mecánicos y de seguridad.",
     examples: "Motos deportivas, Naked, Scooters 4T, Enduro",
+    image: "/images/vehicles/motos-4t.png",
+    alt: "Inspección de luces y revisión sensorial en moto 4T",
   },
   {
     type: "Todas las cilindradas",
     description: "Atendemos motocicletas de cualquier cilindraje, desde 50cc hasta motos de alto cilindraje.",
     examples: "125cc, 150cc, 200cc, 250cc y más",
+    image: "/images/vehicles/todas-cilindradas.png",
+    alt: "Equipo técnico del CDA atendiendo todo tipo de motocicletas",
   },
 ] as const;
 
@@ -232,9 +274,33 @@ export const FAQ_ITEMS = [
 ] as const;
 
 export const CERTIFICATIONS = [
-  "Ministerio de Transporte",
-  "RUNT",
-  "SIMIT",
-  "SuperTransporte",
-  "Federación Colombiana de Municipios",
+  {
+    name: "Ministerio de Transporte",
+    src: "/images/certifications/mintransporte.png",
+    alt: "Ministerio de Transporte de Colombia",
+    height: 110,
+    maxWidth: 200,
+    scale: 1.45,
+  },
+  {
+    name: "RUNT",
+    src: "/images/certifications/runt.jpeg",
+    alt: "Registro Único Nacional de Tránsito - RUNT",
+    height: 80,
+    maxWidth: 340,
+  },
+  {
+    name: "Federación Colombiana de Municipios",
+    src: "/images/certifications/fcm.jpeg",
+    alt: "Federación Colombiana de Municipios",
+    height: 88,
+    maxWidth: 360,
+  },
+  {
+    name: "CAS",
+    src: "/images/certifications/cas.jpg",
+    alt: "Corporación Autónoma Regional de Santander - CAS",
+    height: 110,
+    maxWidth: 110,
+  },
 ] as const;

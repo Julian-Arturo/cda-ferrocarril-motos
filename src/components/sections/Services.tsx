@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Check, ArrowRight, Calendar } from "lucide-react";
-import { SERVICES, CONTACT } from "@/lib/constants";
+import { SERVICES, CONTACT, FINANCING } from "@/lib/constants";
 import { getWhatsAppUrl } from "@/lib/utils";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
@@ -8,6 +8,10 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
 export function Services() {
   const whatsappUrl = getWhatsAppUrl(CONTACT.whatsapp, CONTACT.whatsappMessage);
+  const financingWhatsappUrl = getWhatsAppUrl(
+    CONTACT.whatsapp,
+    FINANCING.whatsappMessage
+  );
 
   return (
     <section id="servicios" className="bg-surface-50 py-20 lg:py-28">
@@ -53,6 +57,21 @@ export function Services() {
                   {service.description}
                 </p>
 
+                {service.id === "financiacion" && (
+                  <div className="mb-5 rounded-xl border border-zinc-100 bg-white p-3 shadow-sm">
+                    <p className="mb-2 text-center text-xs font-medium uppercase tracking-wide text-zinc-500">
+                      Aliados de financiación
+                    </p>
+                    <Image
+                      src={FINANCING.partnersImage}
+                      alt={FINANCING.partnersAlt}
+                      width={320}
+                      height={120}
+                      className="mx-auto h-auto w-full max-w-[240px] object-contain"
+                    />
+                  </div>
+                )}
+
                 <ul className="mb-6 space-y-2">
                   {service.features.map((feature) => (
                     <li
@@ -65,31 +84,26 @@ export function Services() {
                   ))}
                 </ul>
 
-                {service.id === "asesoria" ? (
+                {service.id === "financiacion" || service.id === "asesoria" ? (
                   <WhatsAppButton
-                    href={whatsappUrl}
+                    href={
+                      service.id === "financiacion"
+                        ? financingWhatsappUrl
+                        : whatsappUrl
+                    }
                     fullWidth
                     outline={!service.highlighted}
                     className={service.highlighted ? "" : "mt-auto"}
                   >
                     {service.cta}
                   </WhatsAppButton>
-                ) : service.highlighted ? (
+                ) : (
                   <Button
                     href="#agendar"
                     variant="primary"
                     className="w-full gap-2 shadow-lg shadow-brand-600/30"
                   >
                     <Calendar className="h-4 w-4" />
-                    {service.cta}
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
-                ) : (
-                  <Button
-                    href={service.id === "financiacion" ? "#precios" : "#agendar"}
-                    variant="outline"
-                    className="w-full gap-2"
-                  >
                     {service.cta}
                     <ArrowRight className="h-4 w-4" />
                   </Button>

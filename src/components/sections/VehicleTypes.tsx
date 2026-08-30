@@ -1,4 +1,4 @@
-import { Bike } from "lucide-react";
+import Image from "next/image";
 import { VEHICLE_TYPES } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -16,15 +16,22 @@ export function VehicleTypes() {
           {VEHICLE_TYPES.map((vehicle) => (
             <article
               key={vehicle.type}
-              className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all hover:border-brand-200 hover:shadow-xl"
+              className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all hover:-translate-y-1 hover:border-brand-200 hover:shadow-xl"
             >
-              <div className="flex h-32 items-center justify-center bg-gradient-to-br from-brand-50 to-brand-100 transition-colors group-hover:from-brand-100 group-hover:to-brand-200">
-                <Bike className="h-16 w-16 text-brand-600" />
-              </div>
-              <div className="p-6">
-                <h3 className="mb-2 text-xl font-bold text-surface-900">
+              <div className="relative h-44 overflow-hidden bg-zinc-200">
+                <Image
+                  src={vehicle.image}
+                  alt={vehicle.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white">
                   {vehicle.type}
                 </h3>
+              </div>
+              <div className="p-6">
                 <p className="mb-4 text-sm leading-relaxed text-zinc-600">
                   {vehicle.description}
                 </p>

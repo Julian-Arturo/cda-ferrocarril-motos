@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Calendar } from "lucide-react";
-import { NAV_LINKS, SITE } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { Logo } from "@/components/ui/Logo";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,32 +31,12 @@ export function Navbar() {
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
           ? "bg-white/95 shadow-md backdrop-blur-md"
-          : "bg-transparent"
+          : "border-b border-white/10 bg-surface-950/40 backdrop-blur-lg"
       )}
     >
       <nav className="section-container flex h-16 items-center justify-between lg:h-20">
-        <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-surface-900 transition-transform group-hover:scale-105">
-            <span className="text-xs font-bold text-brand-500">CDA</span>
-          </div>
-          <div className="hidden sm:block">
-            <p
-              className={cn(
-                "text-sm font-bold leading-tight transition-colors",
-                scrolled ? "text-surface-900" : "text-white"
-              )}
-            >
-              {SITE.shortName}
-            </p>
-            <p
-              className={cn(
-                "text-xs transition-colors",
-                scrolled ? "text-zinc-500" : "text-white/70"
-              )}
-            >
-              Barrancabermeja
-            </p>
-          </div>
+        <Link href="/" className="group shrink-0 transition-transform hover:scale-[1.02]">
+          <Logo priority />
         </Link>
 
         <div className="hidden items-center gap-8 lg:flex">

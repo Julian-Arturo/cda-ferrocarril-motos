@@ -87,7 +87,7 @@ export function Location() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="min-h-[400px] w-full"
+              className="min-h-100 w-full"
             />
           </div>
         </div>
