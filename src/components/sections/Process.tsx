@@ -7,11 +7,11 @@ export function Process() {
       <div className="section-container">
         <SectionHeading
           eyebrow="Proceso simple"
-          title="Agenda en menos de 1 minuto"
+          title="Así de fácil es tu revisión"
           description="¿Necesitas tu revisión? Hazlo fácil. Te guiamos paso a paso para que no pierdas tiempo."
         />
 
-        <div className="relative grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="relative grid gap-8 md:grid-cols-3 lg:grid-cols-3">
           <div
             className="absolute left-0 right-0 top-16 hidden h-0.5 bg-gradient-to-r from-brand-200 via-brand-400 to-brand-200 lg:block"
             aria-hidden="true"

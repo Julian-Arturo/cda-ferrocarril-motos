@@ -5,6 +5,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 
 export function Location() {
+  const mapEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
+    CONTACT.mapQuery
+  )}&z=16&hl=es&ie=UTF8&output=embed`;
+
   return (
     <section id="ubicacion" className="py-20 lg:py-28">
       <div className="section-container">
@@ -22,7 +26,7 @@ export function Location() {
                   <MapPin className="h-6 w-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-surface-900">Dirección</h3>
+                  <h3 className="font-bold text-surface-900">{SITE.name}</h3>
                   <p className="mt-1 text-zinc-600">{CONTACT.address}</p>
                   <p className="text-zinc-600">
                     {CONTACT.city}, {CONTACT.department}
@@ -68,7 +72,7 @@ export function Location() {
 
             <Button
               href={CONTACT.mapDirectionsUrl}
-              variant="outline"
+              variant="primary"
               external
               className="w-full gap-2 sm:w-auto"
             >
@@ -80,7 +84,7 @@ export function Location() {
           <div className="overflow-hidden rounded-2xl border border-zinc-200 shadow-lg">
             <iframe
               title={`Mapa de ${SITE.name}`}
-              src={`https://maps.google.com/maps?q=${encodeURIComponent(CONTACT.fullAddress)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+              src={mapEmbedSrc}
               width="100%"
               height="400"
               style={{ border: 0 }}

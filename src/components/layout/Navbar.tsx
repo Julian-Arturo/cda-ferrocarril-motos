@@ -52,7 +52,7 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Button href="#agendar" size="sm" className="gap-2">
+          <Button href="#precios" size="sm" className="gap-2">
             <Calendar className="h-4 w-4" />
             Agendar cita
           </Button>
@@ -84,7 +84,7 @@ export function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Button href="#agendar" className="mt-4 w-full" onClick={() => setIsOpen(false)}>
+            <Button href="#precios" className="mt-4 w-full" onClick={() => setIsOpen(false)}>
               <Calendar className="h-4 w-4" />
               Agendar cita
             </Button>

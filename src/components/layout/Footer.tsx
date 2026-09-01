@@ -72,8 +72,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#agendar" className="transition-colors hover:text-white">
-                  Agendar cita
+                <Link href="#precios" className="transition-colors hover:text-white">
+                  Precios
                 </Link>
               </li>
             </ul>

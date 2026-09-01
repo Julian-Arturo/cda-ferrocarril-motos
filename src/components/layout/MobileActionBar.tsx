@@ -21,7 +21,7 @@ export function MobileActionBar() {
           WhatsApp
         </a>
         <a
-          href="#agendar"
+          href="#precios"
           className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-brand-600 py-3.5 text-sm font-semibold text-white shadow-md shadow-brand-600/25 transition-colors hover:bg-brand-700"
         >
           <Calendar className="h-5 w-5" />

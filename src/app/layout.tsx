@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Oswald, Source_Sans_3 } from "next/font/google";
 import { SITE, CONTACT } from "@/lib/constants";
 import "./globals.css";
 
@@ -7,6 +7,18 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-oswald",
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-source",
 });
 
 export const metadata: Metadata = {
@@ -22,7 +34,7 @@ export const metadata: Metadata = {
     "revisión motos Santander",
     "CDA autorizado motos",
     "revisión técnico mecánica motocicletas",
-    "CDA Av Ferrocarril",
+    "CDA Motos Av El Ferrocarril",
   ],
   authors: [{ name: SITE.name }],
   openGraph: {
@@ -104,14 +116,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={inter.variable}>
+    <html lang="es" className={`${inter.variable} ${oswald.variable} ${sourceSans.variable}`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans pb-20 md:pb-0">
+      <body className="font-body pb-20 md:pb-0">
         {children}
       </body>
     </html>

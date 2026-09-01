@@ -24,14 +24,14 @@ export function FinalCTA() {
           ¿Tu revisión está por vencer?
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-brand-100">
-          No esperes al último momento. Agenda hoy tu revisión técnico-mecánica
+          No esperes al último momento. Realiza hoy tu revisión técnico-mecánica
           y evita multas o inconvenientes.
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="#agendar" variant="light" size="lg" className="min-w-[220px] gap-2">
+          <Button href="#precios" variant="light" size="lg" className="min-w-[220px] gap-2">
             <Calendar className="h-5 w-5" />
-            Agenda tu cita
+            Ver precios
           </Button>
           <WhatsAppButton
             href={whatsappUrl}

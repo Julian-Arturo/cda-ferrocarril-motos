@@ -12,7 +12,6 @@ import { VehicleTypes } from "@/components/sections/VehicleTypes";
 import { SocialProof } from "@/components/sections/SocialProof";
 import { Location } from "@/components/sections/Location";
 import { FAQ } from "@/components/sections/FAQ";
-import { BookingForm } from "@/components/sections/BookingForm";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function Home() {
@@ -30,7 +29,6 @@ export default function Home() {
         <SocialProof />
         <Location />
         <FAQ />
-        <BookingForm />
         <FinalCTA />
       </main>
       <Footer />

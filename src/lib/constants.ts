@@ -15,7 +15,7 @@ export const WHATSAPP_CHAT = {
   storageKey: "cda-wa-chat-dismissed",
   showDelayMs: 3500,
   typingDurationMs: 2600,
-  agentName: "CDA Av. Ferrocarril",
+  agentName: "CDA Motos Av El Ferrocarril",
   status: "En línea · responde en minutos",
   greeting:
     "¡Hola! 👋 Somos el equipo del CDA. ¿Te ayudamos a agendar tu revisión técnico-mecánica?",
@@ -23,8 +23,8 @@ export const WHATSAPP_CHAT = {
 } as const;
 
 export const SITE = {
-  name: "CDA Av. Ferrocarril Motos",
-  shortName: "CDA Ferrocarril Motos",
+  name: "CDA Motos Av El Ferrocarril",
+  shortName: "CDA Motos Av El Ferrocarril",
   tagline: "Revisión técnico-mecánica para motocicletas",
   description:
     "Centro de Diagnóstico Automotor autorizado en Barrancabermeja. Revisión técnico-mecánica para motos 2T y 4T. Atención rápida, segura y confiable.",
@@ -50,10 +50,18 @@ export const CONTACT = {
     weekdays: "Lunes – Sábado: 8:00 a.m. – 6:00 p.m.",
     sunday: "Domingos: 8:00 a.m. – 12:00 p.m.",
   },
-  mapEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.5!2d-73.85!3d7.06!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNy4wNiwtNzMuODU!5e0!3m2!1ses!2sco!4v1",
+  /** Coordenadas aproximadas sede — pin en mapa y ruta */
+  mapLat: 7.0653,
+  mapLng: -73.8547,
+  /** Query del mapa con el nombre del negocio en el pin */
+  mapQuery:
+    "CDA Motos Av El Ferrocarril, Cra. 33 #55A-96, Barrancabermeja, Santander",
+  /**
+   * Abre Google Maps en modo ruta (desde tu ubicación → el CDA).
+   * En móvil suele pedir iniciar navegación de una vez.
+   */
   mapDirectionsUrl:
-    "https://www.google.com/maps/search/?api=1&query=Cra.+33+%2355A-96+Barrancabermeja+Santander",
+    "https://www.google.com/maps/dir/?api=1&destination=CDA+Motos+Av+El+Ferrocarril,+Cra.+33+%2355A-96,+Barrancabermeja,+Santander&travelmode=driving",
   social: {
     facebook:
       "https://www.facebook.com/p/CDA-MOTOS-AV-Ferrocarril-61553245675521/",
@@ -63,7 +71,7 @@ export const CONTACT = {
 
 export const STATS = {
   revisions: 30000,
-  revisionsLabel: "30.000+",
+  revisionsLabel: "30.240+",
   yearsExperience: 5,
 } as const;
 
@@ -108,7 +116,7 @@ export const SERVICES = [
     features: ["Sin cuota inicial", "Aprobación rápida", "Pagos flexibles"],
     cta: "Consultar financiación",
     icon: "credit" as const,
-    image: "/images/services/financiacion.png",
+    image: "/images/financing/sistecredito-fipro.jpg",
     highlighted: false,
   },
   {
@@ -127,7 +135,7 @@ export const SERVICES = [
 export const WHY_US = [
   {
     title: "Atención rápida",
-    description: "Proceso ágil para que no pierdas tiempo. Agenda y realiza tu revisión sin filas innecesarias.",
+    description: "Proceso ágil para que no pierdas tiempo. Atiéndete rápido, sin filas innecesarias.",
     icon: "clock" as const,
   },
   {
@@ -160,21 +168,16 @@ export const WHY_US = [
 export const PROCESS_STEPS = [
   {
     step: "01",
-    title: "Agenda",
-    description: "Contáctanos por WhatsApp o agenda tu cita en línea. Elige el horario que más te convenga.",
-  },
-  {
-    step: "02",
     title: "Lleva tu moto",
     description: "Visítanos en nuestra sede con los documentos de tu motocicleta y tu identificación.",
   },
   {
-    step: "03",
+    step: "02",
     title: "Realizamos la revisión",
     description: "Nuestro equipo especializado inspecciona tu vehículo siguiendo los protocolos oficiales.",
   },
   {
-    step: "04",
+    step: "03",
     title: "Recibe tu resultado",
     description: "Te entregamos el resultado de tu revisión y el registro correspondiente en el RUNT.",
   },
@@ -197,7 +200,7 @@ export const VEHICLE_TYPES = [
   },
   {
     type: "Todas las cilindradas",
-    description: "Atendemos motocicletas de cualquier cilindraje, desde 50cc hasta motos de alto cilindraje.",
+    description: "Atendemos motocicletas de cualquier cilindraje, desde 100cc hasta motos de alto cilindraje.",
     examples: "125cc, 150cc, 200cc, 250cc y más",
     image: "/images/vehicles/todas-cilindradas.png",
     alt: "Equipo técnico del CDA atendiendo todo tipo de motocicletas",
@@ -206,19 +209,46 @@ export const VEHICLE_TYPES = [
 
 export const PRICING = [
   {
-    id: "motos",
-    name: "Motocicletas",
-    price: "Consultar tarifa",
-    priceNote: "Precios sujetos a tarifas vigentes del Ministerio de Transporte",
-    description: "Revisión técnico-mecánica completa",
+    id: "motos-2t",
+    name: "Motos 2T",
+    price: "$189.000",
+    priceNote: "Precio de referencia · confirmar por WhatsApp",
+    description: "Revisión técnico-mecánica para motocicletas de dos tiempos",
     features: [
-      "Inspección mecánica y de seguridad",
-      "Verificación de luces y frenos",
+      "Inspección completa 2T",
+      "Luces, frenos y emisiones",
       "Registro en RUNT",
-      "Resultado de la revisión",
-      "Atención especializada en motos",
+      "Resultado el mismo día",
+    ],
+    highlighted: false,
+  },
+  {
+    id: "motos-4t",
+    name: "Motos 4T",
+    price: "$195.000",
+    priceNote: "Precio de referencia · confirmar por WhatsApp",
+    description: "Revisión técnico-mecánica para motocicletas de cuatro tiempos",
+    features: [
+      "Inspección integral 4T",
+      "Sistemas mecánicos y seguridad",
+      "Registro en RUNT",
+      "Resultado el mismo día",
     ],
     highlighted: true,
+  },
+  {
+    id: "scooters",
+    name: "Scooters y todas las cilindradas",
+    price: "$199.000",
+    priceNote: "Precio de referencia · confirmar por WhatsApp",
+    description: "Desde 100cc hasta alto cilindraje. Exclusivo motos",
+    features: [
+      "Cualquier cilindraje",
+      "Scooters, naked y enduro",
+      "Registro en RUNT",
+      "Opción de financiación 100%",
+    ],
+    highlighted: false,
   },
 ] as const;
 
@@ -244,32 +274,17 @@ export const FAQ_ITEMS = [
   {
     question: "¿Qué es la revisión técnico-mecánica?",
     answer:
-      "Es un examen obligatorio que verifica que tu motocicleta cumpla con las condiciones mecánicas, de seguridad y ambientales exigidas por la ley colombiana. Debe realizarse periódicamente según la normativa vigente.",
+      "La revisión técnico-mecánica y de emisiones contaminantes es un proceso obligatorio de inspección a los vehículos automotores para verificar que cumplan con las condiciones óptimas de seguridad y medio ambiente establecidas en las normas técnicas del país.",
   },
   {
     question: "¿Qué documentos necesito para la revisión?",
     answer:
-      "Generalmente necesitas la tarjeta de propiedad de la motocicleta, tu documento de identidad y el SOAT vigente. Te recomendamos confirmar los requisitos al agendar tu cita.",
+      "Necesitas la tarjeta de propiedad de la motocicleta y tu documento de identidad.",
   },
   {
-    question: "¿Cuánto demora el proceso?",
+    question: "¿Qué debo revisar antes de ir?",
     answer:
-      "El tiempo puede variar según la demanda, pero nuestro objetivo es atenderte de forma ágil. Agenda tu cita para reducir tiempos de espera.",
-  },
-  {
-    question: "¿Atienden motos de cualquier cilindraje?",
-    answer:
-      "Sí, realizamos revisión técnico-mecánica para motocicletas 2T y 4T de todas las cilindradas.",
-  },
-  {
-    question: "¿Puedo financiar la revisión?",
-    answer:
-      "Sí, ofrecemos financiación del 100% a través de Sistecrédito y Fipro. Consulta las condiciones con nuestro equipo.",
-  },
-  {
-    question: "¿Dónde están ubicados?",
-    answer:
-      "Estamos en Cra. 33 #55A-96, Barrancabermeja, Santander. Atendemos de lunes a sábado de 8:00 a.m. a 6:00 p.m. y domingos de 8:00 a.m. a 12:00 p.m.",
+      "Verifica luces, llantas y frenos para evitar contratiempos.",
   },
 ] as const;
 
