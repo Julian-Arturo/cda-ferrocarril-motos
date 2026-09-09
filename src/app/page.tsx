@@ -7,7 +7,6 @@ import { TrustBar } from "@/components/sections/TrustBar";
 import { Services } from "@/components/sections/Services";
 import { WhyUs } from "@/components/sections/WhyUs";
 import { Pricing } from "@/components/sections/Pricing";
-import { Process } from "@/components/sections/Process";
 import { VehicleTypes } from "@/components/sections/VehicleTypes";
 import { SocialProof } from "@/components/sections/SocialProof";
 import { Location } from "@/components/sections/Location";
@@ -24,7 +23,6 @@ export default function Home() {
         <Services />
         <WhyUs />
         <Pricing />
-        <Process />
         <VehicleTypes />
         <SocialProof />
         <Location />

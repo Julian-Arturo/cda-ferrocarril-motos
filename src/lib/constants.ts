@@ -41,7 +41,7 @@ export const CONTACT = {
   department: "Santander",
   country: "Colombia",
   fullAddress: "Cra. 33 #55A-96, Barrancabermeja, Santander",
-  phones: ["300 222 5280", "300 222 9094"],
+  phones: ["300 222 5280", "300 222 9094", "304 295 0489"],
   whatsapp: "573002225280",
   whatsappMessage:
     "Hola, me gustaría agendar una revisión técnico-mecánica para mi motocicleta.",
@@ -123,8 +123,8 @@ export const SERVICES = [
     id: "asesoria",
     title: "Asesoría y acompañamiento",
     description:
-      "Te guiamos en todo el proceso para que tu revisión sea rápida, clara y sin complicaciones.",
-    features: ["Atención personalizada", "Proceso transparente", "Soporte por WhatsApp"],
+      "Te guiamos en todo el proceso para que tu revisión sea precisa y eficiente",
+    features: ["Atención personalizada", "Proceso transparente", "Cuidamos de tu motocicleta"],
     cta: "Hablar con un asesor",
     icon: "support" as const,
     image: "/images/services/asesoria.png",
@@ -135,7 +135,7 @@ export const SERVICES = [
 export const WHY_US = [
   {
     title: "Atención rápida",
-    description: "Proceso ágil para que no pierdas tiempo. Atiéndete rápido, sin filas innecesarias.",
+    description: "Proceso ágil para que no pierdas tiempo. Tu revisión en 20 minutos.",
     icon: "clock" as const,
   },
   {
@@ -145,12 +145,12 @@ export const WHY_US = [
   },
   {
     title: "Instalaciones adecuadas",
-    description: "Centro equipado con la tecnología necesaria para un diagnóstico confiable y preciso.",
+    description: "Centro equipado con la tecnología de punta para un diagnóstico veraz.",
     icon: "building" as const,
   },
   {
     title: "Proceso confiable",
-    description: "Cumplimos con la normativa vigente y registramos tu revisión correctamente en el RUNT.",
+    description: "Cumplimos con la normativa vigente y te entregamos el resultado de tu revisión.",
     icon: "shield" as const,
   },
   {
@@ -160,26 +160,8 @@ export const WHY_US = [
   },
   {
     title: "Ubicación conveniente",
-    description: "Estamos en el corazón de Barrancabermeja, fácil acceso y estacionamiento disponible.",
+    description: "Estamos en el corazón de Barrancabermeja, Carrera 33 frente a la Ferretería Ar&San.",
     icon: "map" as const,
-  },
-] as const;
-
-export const PROCESS_STEPS = [
-  {
-    step: "01",
-    title: "Lleva tu moto",
-    description: "Visítanos en nuestra sede con los documentos de tu motocicleta y tu identificación.",
-  },
-  {
-    step: "02",
-    title: "Realizamos la revisión",
-    description: "Nuestro equipo especializado inspecciona tu vehículo siguiendo los protocolos oficiales.",
-  },
-  {
-    step: "03",
-    title: "Recibe tu resultado",
-    description: "Te entregamos el resultado de tu revisión y el registro correspondiente en el RUNT.",
   },
 ] as const;
 
@@ -189,7 +171,7 @@ export const VEHICLE_TYPES = [
     description: "Motocicletas de dos tiempos. Revisión completa de motor, frenos, luces y emisiones.",
     examples: "Ciclomotores, motos de trabajo, scooters 2T",
     image: "/images/vehicles/motos-2t.png",
-    alt: "Revisión técnico-mecánica de moto 2T en CDA Av. Ferrocarril",
+    alt: "Motos en pista de revisión en CDA Motos Av El Ferrocarril",
   },
   {
     type: "Motos 4T",
@@ -202,7 +184,7 @@ export const VEHICLE_TYPES = [
     type: "Todas las cilindradas",
     description: "Atendemos motocicletas de cualquier cilindraje, desde 100cc hasta motos de alto cilindraje.",
     examples: "125cc, 150cc, 200cc, 250cc y más",
-    image: "/images/vehicles/todas-cilindradas.png",
+    image: "/images/vehicles/motos-pista.jpg",
     alt: "Equipo técnico del CDA atendiendo todo tipo de motocicletas",
   },
 ] as const;
@@ -252,24 +234,6 @@ export const PRICING = [
   },
 ] as const;
 
-export const TESTIMONIALS = [
-  {
-    name: "Carlos M.",
-    text: "Excelente atención, muy rápidos y profesionales. Saqué mi revisión sin complicaciones y el trato fue muy amable.",
-    rating: 5,
-  },
-  {
-    name: "Laura P.",
-    text: "Llevé mi moto y en poco tiempo ya tenía el resultado. Recomendado para quienes necesitan la revisión en Barrancabermeja.",
-    rating: 5,
-  },
-  {
-    name: "Andrés R.",
-    text: "Me ayudaron con la financiación y pude hacer la revisión sin problema. Muy buen servicio y precios justos.",
-    rating: 5,
-  },
-] as const;
-
 export const FAQ_ITEMS = [
   {
     question: "¿Qué es la revisión técnico-mecánica?",
@@ -290,12 +254,13 @@ export const FAQ_ITEMS = [
 
 export const CERTIFICATIONS = [
   {
-    name: "Ministerio de Transporte",
+
+      name: "SuperTransporte",
     src: "/images/certifications/mintransporte.png",
-    alt: "Ministerio de Transporte de Colombia",
-    height: 110,
-    maxWidth: 200,
-    scale: 1.45,
+    alt: "Vigilado SuperTransporte",
+    height: 88,
+    maxWidth: 280,
+  
   },
   {
     name: "RUNT",
@@ -305,11 +270,11 @@ export const CERTIFICATIONS = [
     maxWidth: 340,
   },
   {
-    name: "Federación Colombiana de Municipios",
-    src: "/images/certifications/fcm.jpeg",
-    alt: "Federación Colombiana de Municipios",
-    height: 88,
-    maxWidth: 360,
+    name: "ONAC",
+    src: "/images/certifications/logo-onac.png",
+    alt: "Organismo Nacional de Acreditación de Colombia - ONAC",
+    height: 90,
+    maxWidth: 160,
   },
   {
     name: "CAS",

@@ -42,7 +42,7 @@ export function Hero() {
               </p>
 
               <h1 className="hero-rise hero-rise-delay-1 mt-4 font-display text-[2.35rem] font-semibold uppercase leading-[0.95] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-[4.25rem]">
-                {SITE.shortName}
+                CDA Motos Av El Ferrocarril
               </h1>
 
               <div className="hero-rise hero-rise-delay-1 mt-4 flex items-center gap-3">
@@ -51,7 +51,7 @@ export function Hero() {
                   aria-hidden="true"
                 />
                 <p className="font-display text-lg font-medium uppercase tracking-[0.12em] text-zinc-100 sm:text-xl lg:text-2xl">
-                  Revisión solo para motos
+                  Solo para motos
                 </p>
               </div>
 
