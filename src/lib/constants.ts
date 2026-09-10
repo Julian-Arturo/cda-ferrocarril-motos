@@ -1,7 +1,6 @@
 export const IMAGES = {
   hero: "/images/hero-fachada.jpg",
   logo: "/images/logo.png",
-  booking: "/images/booking.png",
 } as const;
 
 export const R5 = {
@@ -89,12 +88,6 @@ export const NAV_LINKS = [
   { href: "#faq", label: "Preguntas frecuentes" },
 ] as const;
 
-export const TRUST_ITEMS = [
-  "CDA autorizado",
-  "Registro RUNT",
-  "Atención especializada",
-  "Barrancabermeja, Santander",
-] as const;
 
 export const SERVICES = [
   {
@@ -189,50 +182,6 @@ export const VEHICLE_TYPES = [
   },
 ] as const;
 
-export const PRICING = [
-  {
-    id: "motos-2t",
-    name: "Motos 2T",
-    price: "$189.000",
-    priceNote: "Precio de referencia · confirmar por WhatsApp",
-    description: "Revisión técnico-mecánica para motocicletas de dos tiempos",
-    features: [
-      "Inspección completa 2T",
-      "Luces, frenos y emisiones",
-      "Registro en RUNT",
-      "Resultado el mismo día",
-    ],
-    highlighted: false,
-  },
-  {
-    id: "motos-4t",
-    name: "Motos 4T",
-    price: "$195.000",
-    priceNote: "Precio de referencia · confirmar por WhatsApp",
-    description: "Revisión técnico-mecánica para motocicletas de cuatro tiempos",
-    features: [
-      "Inspección integral 4T",
-      "Sistemas mecánicos y seguridad",
-      "Registro en RUNT",
-      "Resultado el mismo día",
-    ],
-    highlighted: true,
-  },
-  {
-    id: "scooters",
-    name: "Scooters y todas las cilindradas",
-    price: "$199.000",
-    priceNote: "Precio de referencia · confirmar por WhatsApp",
-    description: "Desde 100cc hasta alto cilindraje. Exclusivo motos",
-    features: [
-      "Cualquier cilindraje",
-      "Scooters, naked y enduro",
-      "Registro en RUNT",
-      "Opción de financiación 100%",
-    ],
-    highlighted: false,
-  },
-] as const;
 
 export const FAQ_ITEMS = [
   {
@@ -254,13 +203,11 @@ export const FAQ_ITEMS = [
 
 export const CERTIFICATIONS = [
   {
-
-      name: "SuperTransporte",
-    src: "/images/certifications/mintransporte.png",
+    name: "SuperTransporte",
+    src: "/images/certifications/supertransporte.jpg",
     alt: "Vigilado SuperTransporte",
     height: 88,
     maxWidth: 280,
-  
   },
   {
     name: "RUNT",

@@ -71,11 +71,6 @@ export function Footer() {
                   Preguntas frecuentes
                 </Link>
               </li>
-              <li>
-                <Link href="#precios" className="transition-colors hover:text-white">
-                  Precios
-                </Link>
-              </li>
             </ul>
           </div>
 
