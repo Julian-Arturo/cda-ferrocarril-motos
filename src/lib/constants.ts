@@ -41,7 +41,7 @@ export const CONTACT = {
   country: "Colombia",
   fullAddress: "Cra. 33 #55A-96, Barrancabermeja, Santander",
   phones: ["300 222 5280", "300 222 9094", "304 295 0489"],
-  whatsapp: "573002225280",
+  whatsapp: "573042950489",
   whatsappMessage:
     "Hola, me gustaría agendar una revisión técnico-mecánica para mi motocicleta.",
   email: "contacto@cdaferrocarrilmotos.com",
@@ -148,7 +148,7 @@ export const WHY_US = [
   },
   {
     title: "Precios competitivos",
-    description: "Tarifas claras y opciones de financiación para que accedas a tu revisión sin preocupaciones.",
+    description: "La tarifa más baja de la ciudad y opciones de financiación para que accedas a tu revisión sin preocupaciones.",
     icon: "tag" as const,
   },
   {
@@ -163,7 +163,7 @@ export const VEHICLE_TYPES = [
     type: "Motos 2T",
     description: "Motocicletas de dos tiempos. Revisión completa de motor, frenos, luces y emisiones.",
     examples: "Ciclomotores, motos de trabajo, scooters 2T",
-    image: "/images/vehicles/motos-2t.png",
+    image: "/images/vehicles/DT-2T.jpeg",
     alt: "Motos en pista de revisión en CDA Motos Av El Ferrocarril",
   },
   {

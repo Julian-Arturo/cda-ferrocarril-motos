@@ -38,7 +38,7 @@ const YEAR_OPTIONS: YearOption[] = [
 ];
 
 // Enlace de pasarela segura Wompi (personalizable según el comercio)
-const WOMPI_CHECKOUT_URL = "https://checkout.wompi.co/l/VPOS_ferrocarril";
+const WOMPI_CHECKOUT_URL = "https://checkout.wompi.co/l/0Ghybb";
 
 export function Pricing() {
   const [selectedYear, setSelectedYear] = useState<string>("2026-2024");
