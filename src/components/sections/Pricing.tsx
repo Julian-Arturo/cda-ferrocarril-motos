@@ -8,6 +8,7 @@ interface YearOption {
   value: string;
   price: string;
   amount: number;
+  checkoutUrl: string;
 }
 
 const YEAR_OPTIONS: YearOption[] = [
@@ -16,39 +17,36 @@ const YEAR_OPTIONS: YearOption[] = [
     value: "2026-2024",
     price: "$237.357 COP",
     amount: 237357,
+    checkoutUrl: "https://checkout.wompi.co/l/DDYJBX",
   },
   {
     label: "2023 - 2019",
     value: "2023-2019",
     price: "$237.657 COP",
     amount: 237657,
+    checkoutUrl: "https://checkout.wompi.co/l/xHdWMa",
   },
   {
     label: "2018 - 2010",
     value: "2018-2010",
     price: "$237.957 COP",
     amount: 237957,
+    checkoutUrl: "https://checkout.wompi.co/l/956wjD",
   },
   {
     label: "2009 o menor",
     value: "2009-older",
     price: "$237.657 COP",
     amount: 237657,
+    checkoutUrl: "https://checkout.wompi.co/l/BCTssA",
   },
 ];
-
-// Enlace de pasarela segura Wompi (personalizable según el comercio)
-const WOMPI_CHECKOUT_URL = "https://checkout.wompi.co/l/0Ghybb";
 
 export function Pricing() {
   const [selectedYear, setSelectedYear] = useState<string>("2026-2024");
 
   const currentOption =
     YEAR_OPTIONS.find((opt) => opt.value === selectedYear) || YEAR_OPTIONS[0];
-
-  const handlePayment = () => {
-    window.open(WOMPI_CHECKOUT_URL, "_blank", "noopener,noreferrer");
-  };
 
   return (
     <section id="precios" className="relative bg-surface-950 py-20 lg:py-28 overflow-hidden">
@@ -162,15 +160,16 @@ export function Pricing() {
 
               {/* Botón de acción destacado */}
               <div className="mt-6 flex justify-center">
-                <button
-                  type="button"
-                  onClick={handlePayment}
+                <a
+                  href={currentOption.checkoutUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex w-full items-center justify-center gap-3 rounded-xl bg-brand-600 px-8 py-4 text-base font-bold uppercase tracking-wider text-white shadow-lg shadow-brand-600/30 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-500 hover:shadow-xl hover:shadow-brand-600/40 focus:outline-none focus:ring-4 focus:ring-brand-500/30 sm:w-auto"
                 >
                   <CreditCard className="h-5 w-5 transition-transform group-hover:scale-110" />
                   <span>Pagar ahora</span>
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </button>
+                </a>
               </div>
             </div>
 
