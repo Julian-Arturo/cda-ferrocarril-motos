@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CERTIFICATIONS } from "@/lib/constants";
 
 export function TrustBar() {
@@ -11,15 +12,15 @@ export function TrustBar() {
               className="flex h-20 w-full max-w-[280px] items-center justify-center px-2 sm:h-24 lg:h-28"
               title={cert.name}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={cert.src}
                 alt={cert.alt}
+                width={cert.maxWidth}
+                height={cert.height}
                 className="h-full w-full object-contain"
                 style={{
                   maxHeight: cert.height,
                   maxWidth: cert.maxWidth,
-                  transform: "scale" in cert && cert.scale ? `scale(${cert.scale})` : undefined,
                 }}
               />
             </div>
